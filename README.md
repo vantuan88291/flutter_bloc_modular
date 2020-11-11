@@ -2,6 +2,9 @@
 
 A new Flutter project. Created by Slidy
 
+- Bloc, rxDart, modular, already setup Dio, Multi language with intl, loading and show message overlay the app
+
+
 # Install slidy first: https://github.com/Flutterando/slidy
 
 ## Getting Started
