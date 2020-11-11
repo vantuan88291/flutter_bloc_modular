@@ -2,6 +2,8 @@
 
 A new Flutter project. Created by Slidy
 
+# Install slidy first: https://github.com/Flutterando/slidy
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
