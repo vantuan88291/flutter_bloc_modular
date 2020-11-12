@@ -29,6 +29,7 @@ class _LoginPageState extends State<LoginPage> {
           TextWidget("Login"),
           ButtonWidget(text: "Go register", onPress: () => Modular.to.pushNamed('/register'),),
           ButtonWidget(text: "Go main", onPress: () => Modular.to.pushNamed('/primary'),),
+          ButtonWidget(text: "Go product", onPress: () => Modular.to.pushNamed('/primary/product'),),
           ButtonWidget(text: S.current.call_api, onPress: login.onLogin,),
         ],
       ),

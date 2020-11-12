@@ -1,7 +1,3 @@
-import 'pages/loading/loading_bloc.dart';
-import 'pages/home/home_bloc.dart';
-import 'pages/register/register_bloc.dart';
-import 'pages/login/login_bloc.dart';
 import 'package:ecommerce/services/api.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';

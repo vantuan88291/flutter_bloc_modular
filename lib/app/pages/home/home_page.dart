@@ -1,4 +1,6 @@
+import 'package:ecommerce/app/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -16,7 +18,9 @@ class _HomePageState extends State<HomePage> {
         title: Text(widget.title),
       ),
       body: Column(
-        children: <Widget>[],
+        children: <Widget>[
+          ButtonWidget(text: 'navigate product', onPress: () => Modular.to.pushNamed('/primary/product'),)
+        ],
       ),
     );
   }
