@@ -6,6 +6,7 @@ import 'package:ecommerce/app/app_widget.dart';
 import 'app_bloc.dart';
 import 'modules/authen/authen_module.dart';
 import 'modules/primary/primary_module.dart';
+import 'pages/routes.dart';
 
 class AppModule extends MainModule {
   @override
@@ -17,7 +18,7 @@ class AppModule extends MainModule {
   @override
   List<ModularRouter> get routers => [
         ModularRouter(Modular.initialRoute, module: AuthenModule()),
-        ModularRouter('/primary', module: PrimaryModule()),
+        ModularRouter(Routes.primary, module: PrimaryModule()),
       ];
 
   @override
