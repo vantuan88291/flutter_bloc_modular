@@ -15,7 +15,7 @@ class LoginBloc extends Disposable {
     app.setLoad(true);
     ResultsLogin data = await api.doLogin();
     if (data.code != 200) {
-      app.success(data.message);
+      app.warn(data.message);
     } else {
       app.error(data.message);
       Modular.to.pushReplacementNamed('/primary');

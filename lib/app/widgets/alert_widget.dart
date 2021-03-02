@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:ecommerce/theme/colors.dart';
+import 'package:ecommerce/theme/images.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/model.dart';
@@ -28,9 +30,9 @@ class StateAlertWidget extends State<AlertWidget>
         AnimationController(vsync: this, duration: Duration(milliseconds: 300));
     animationPush = Tween(begin: -100.0, end: 0.0).animate(animationController);
     app.getAlert.listen((event) {
-      if (event != null) {
+      if (event?.isShow != null) {
         animationController.forward();
-        _timer = Timer(Duration(milliseconds: 2000), () {
+        _timer = Timer(Duration(milliseconds: 3000), () {
           app.clearAlert();
         });
       } else {
@@ -51,24 +53,52 @@ class StateAlertWidget extends State<AlertWidget>
     app.clearAlert();
   }
 
+  String getIcon(TypeAlert type) {
+    switch(type) {
+      case TypeAlert.success:
+        return Images.success;
+      case TypeAlert.warning:
+        return Images.warn;
+      case TypeAlert.error:
+        return Images.error;
+      default:
+        return "";
+    }
+  }
+
+  Color getBackground(TypeAlert type) {
+    switch(type) {
+      case TypeAlert.success:
+        return AppColor.green;
+      case TypeAlert.warning:
+        return AppColor.brown;
+      case TypeAlert.error:
+        return Colors.red;
+      default:
+        return AppColor.green;
+    }
+  }
+
   Widget renderMessage() => Positioned(
         top: animationPush.value,
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
-          child: ButtonWidget(
-            radius: 0,
-            padding: EdgeInsets.only(top: 36, bottom: 18, left: 10, right: 10),
-            color: Colors.green,
-            onPress: onPress,
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: StreamBuilder<DataAlert>(
-                stream: app.getAlert,
-                builder: (c, v) => Row(
+          child: StreamBuilder<DataAlert>(
+            stream: app.getAlert,
+            builder: (c, v) => ButtonWidget(
+              radius: 0,
+              padding: EdgeInsets.only(top: 36, bottom: 18, left: 10, right: 10),
+              color: getBackground(v.data?.type ?? null),
+              onPress: onPress,
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Row(
                   children: [
-                    Icon(
-                      Icons.phone,
-                      size: 30,
+                    Image.asset(
+                      getIcon(v.data?.type ?? null),
+                      fit: BoxFit.contain,
+                      height: 30,
+                      width: 30,
                     ),
                     SizedBox(
                       width: 10,

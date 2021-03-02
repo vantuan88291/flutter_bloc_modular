@@ -19,7 +19,7 @@ class _AppWidget extends State<AppWidget> {
   Widget renderMain(snapshot) => MaterialApp(
     debugShowCheckedModeBanner: false,
     navigatorKey: Modular.navigatorKey,
-    title: 'Trùm Supp',
+    title: 'Base project',
     theme: snapshot.hasData
         ? snapshot.data.themeData
         : getThemeMode(THEME_MODE.LIGHT).themeData,

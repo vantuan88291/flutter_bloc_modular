@@ -8,7 +8,7 @@ class LoggingInterceptor extends Interceptor {
   @override
   Future onRequest(RequestOptions options) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String token = prefs.getString(TOKEN);
+    String token = prefs.getString(Common.TOKEN);
     if (token != null) {
       options.headers.addAll({'Authorization': "Bearer ${token}"});
     }

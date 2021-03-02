@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 doExpires() async{
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.remove(TOKEN);
+  prefs.remove(Common.TOKEN);
   Modular.to.pushReplacementNamed('/login');
 }
 handlerError(error) {

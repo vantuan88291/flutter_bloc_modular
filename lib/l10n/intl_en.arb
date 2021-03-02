@@ -1,4 +1,7 @@
 {
   "hello": "Hello",
-  "call_api": "call api"
+  "call_api": "call api",
+  "success": "Success",
+  "warn": "Warning",
+  "error": "Error"
 }

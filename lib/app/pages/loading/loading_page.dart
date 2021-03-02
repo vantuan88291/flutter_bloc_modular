@@ -19,7 +19,7 @@ class _LoadingPageState extends State<LoadingPage> {
   }
   remember() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String token = prefs.getString(TOKEN);
+    String token = prefs.getString(Common.TOKEN);
     if (token != null) {
       Modular.to.pushReplacementNamed('/primary');
     } else {

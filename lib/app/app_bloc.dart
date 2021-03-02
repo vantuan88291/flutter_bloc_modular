@@ -1,3 +1,4 @@
+import 'package:ecommerce/generated/l10n.dart';
 import 'package:ecommerce/models/theme/theme_data.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rxdart/rxdart.dart';
@@ -24,22 +25,24 @@ class AppBloc extends Disposable {
   }
 
   success(String msg, {String title}) {
-    DataAlert item = DataAlert(msg, "Title", TypeAlert.success);
+    DataAlert item = DataAlert(msg, title ?? S.current.success, TypeAlert.success, true);
     setAlert(item);
   }
 
   warn(String msg, {String title}) {
-    DataAlert item = DataAlert(msg, "Title", TypeAlert.warning);
+    DataAlert item = DataAlert(msg, title ?? S.current.warn, TypeAlert.warning, true);
     setAlert(item);
   }
 
   error(String msg, {String title}) {
-    DataAlert item = DataAlert(msg, "Title", TypeAlert.error);
+    DataAlert item = DataAlert(msg, title ?? S.current.error, TypeAlert.error, true);
     setAlert(item);
   }
 
   clearAlert() {
-    setAlert(null);
+    DataAlert item = dataAlert.value;
+    item.setShow(null);
+    setAlert(item);
   }
 
   @override
