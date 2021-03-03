@@ -1,10 +1,10 @@
 import 'package:ecommerce/app/app_module.dart';
-import 'package:ecommerce/app/widgets/alert_widget.dart';
 import 'package:ecommerce/app/widgets/loading_widget.dart';
 import 'package:ecommerce/generated/l10n.dart';
 import 'package:ecommerce/models/theme/theme_data.dart';
 import 'package:ecommerce/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dropdown_alert/dropdown_alert.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -29,7 +29,7 @@ class _AppWidget extends State<AppWidget> {
       children: [
         child,
         LoadingWidget(),
-        AlertWidget()
+        DropdownAlert()
       ],
     ),
     onGenerateRoute: Modular.generateRoute,

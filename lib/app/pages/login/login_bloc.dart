@@ -1,6 +1,8 @@
 import 'package:ecommerce/models/login/results_login.dart';
 import 'package:ecommerce/services/api.dart';
+import 'package:flutter_dropdown_alert/model/data_alert.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_dropdown_alert/alert_controller.dart';
 
 import '../../app_bloc.dart';
 import '../../app_module.dart';
@@ -15,9 +17,9 @@ class LoginBloc extends Disposable {
     app.setLoad(true);
     ResultsLogin data = await api.doLogin();
     if (data.code != 200) {
-      app.warn(data.message);
+      AlertController.show("Error", data.message, TypeAlert.error);
     } else {
-      app.error(data.message);
+      AlertController.show("Success", data.message, TypeAlert.success);
       Modular.to.pushReplacementNamed('/primary');
     }
     app.setLoad(false);
