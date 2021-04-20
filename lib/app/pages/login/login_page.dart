@@ -1,4 +1,3 @@
-import 'package:ecommerce/app/modules/authen/authen_module.dart';
 import 'package:ecommerce/app/widgets/button_widget.dart';
 import 'package:ecommerce/app/widgets/text_widget.dart';
 import 'package:ecommerce/generated/l10n.dart';
@@ -9,14 +8,14 @@ import 'login_bloc.dart';
 
 class LoginPage extends StatefulWidget {
   final String title;
-  const LoginPage({Key key, this.title = "Login"}) : super(key: key);
+  const LoginPage({Key? key, this.title = "Login"}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  LoginBloc login = AuthenModule.to.get<LoginBloc>();
+  LoginBloc login = Modular.get<LoginBloc>();
 
   @override
   Widget build(BuildContext context) {

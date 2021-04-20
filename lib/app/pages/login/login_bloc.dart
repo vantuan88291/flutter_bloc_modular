@@ -5,11 +5,10 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_dropdown_alert/alert_controller.dart';
 
 import '../../app_bloc.dart';
-import '../../app_module.dart';
 
 class LoginBloc extends Disposable {
   final Api api;
-  final AppBloc app = AppModule.to.get<AppBloc>();
+  final AppBloc app = Modular.get<AppBloc>();
   LoginBloc(this.api);
   //dispose will be called automatically by closing its streams
 

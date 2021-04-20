@@ -14,7 +14,7 @@ class AppBloc extends Disposable {
   Stream<bool> get getLoad => loading.stream;
 
   Future changTheme(THEME_MODE themeMode) async {
-    setTheme.add(getThemeMode(themeMode));
+    setTheme.add(getThemeMode(themeMode)!);
   }
 
   @override

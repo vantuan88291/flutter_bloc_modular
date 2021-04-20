@@ -5,7 +5,7 @@ typedef onPressButton = void Function();
 
 class ButtonWidget extends StatelessWidget {
   ButtonWidget(
-      {Key key,
+      {Key? key,
       this.color,
       this.padding,
       this.radius,
@@ -15,18 +15,18 @@ class ButtonWidget extends StatelessWidget {
       this.textStyle,
       this.loading, this.side})
       : super(key: key);
-  final Color color;
-  final EdgeInsetsGeometry padding;
-  final double radius;
-  final Widget child;
-  final onPressButton onPress;
-  final String text;
-  final TextStyle textStyle;
-  final bool loading;
-  final BorderSide side;
+  final Color? color;
+  final EdgeInsetsGeometry? padding;
+  final double? radius;
+  final Widget? child;
+  final onPressButton? onPress;
+  final String? text;
+  final TextStyle? textStyle;
+  final bool? loading;
+  final BorderSide? side;
 
   Widget renderChild() {
-    if (this.loading != null && this.loading) {
+    if (this.loading != null && this.loading!) {
       return SizedBox(
         width: 20,
         height: 20,
@@ -37,9 +37,9 @@ class ButtonWidget extends StatelessWidget {
       );
     }
     return child != null
-        ? child
+        ? child!
         : Text(
-            this.text,
+            this.text!,
             style: TextStyle(color: Colors.black).merge(this.textStyle),
           );
   }
@@ -52,8 +52,8 @@ class ButtonWidget extends StatelessWidget {
           ? EdgeInsets.symmetric(vertical: 15, horizontal: 15)
           : padding,
       shape: new RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(radius != null ? radius : 6),
-          side: side != null ? side : BorderSide.none),
+          borderRadius: BorderRadius.circular(radius != null ? radius! : 6),
+          side: side != null ? side! : BorderSide.none),
       child: renderChild(),
       onPressed: onPress,
     );

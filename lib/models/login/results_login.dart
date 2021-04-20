@@ -1,7 +1,7 @@
 import 'user_model.dart';
 
 class ResultsLogin {
-  final UserModel data;
+  final UserModel? data;
   final String message;
   final int code;
 

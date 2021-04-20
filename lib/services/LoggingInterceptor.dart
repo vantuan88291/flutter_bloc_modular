@@ -6,22 +6,22 @@ class LoggingInterceptor extends Interceptor {
   int _maxCharactersPerLine = 200;
 
   @override
-  Future onRequest(RequestOptions options) async {
+  Future onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String token = prefs.getString(Common.TOKEN);
+    String? token = prefs.getString(Common.TOKEN);
     if (token != null) {
       options.headers.addAll({'Authorization': "Bearer ${token}"});
     }
     print("--> ${options.method} ${options.baseUrl}${options.path}");
     print("params: ${options.queryParameters}");
     print("<-- END HTTP");
-    return super.onRequest(options);
+    return super.onRequest(options, handler);
   }
 
   @override
-  Future onResponse(Response response) {
+  onResponse(Response response, ResponseInterceptorHandler handler) {
     print(
-        "<--response: ${response.statusCode} ${response.request.method} ${response.request.path}");
+        "<--response: ${response.statusCode} ${response.requestOptions.method} ${response.requestOptions.path}");
     String responseAsString = response.data.toString();
     if (responseAsString.length > _maxCharactersPerLine) {
       int iterations =
@@ -39,14 +39,14 @@ class LoggingInterceptor extends Interceptor {
     }
     print("<-- END HTTP");
 
-    return super.onResponse(response);
+    return super.onResponse(response, handler);
   }
 
   @override
-  Future onError(DioError err) {
+  onError(DioError err, ErrorInterceptorHandler handler) {
     print("<-- Error -->");
     print(err.error);
     print(err.message);
-    return super.onError(err);
+    return super.onError(err, handler);
   }
 }

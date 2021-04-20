@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
   final String title;
-  const RegisterPage({Key key, this.title = "Register"}) : super(key: key);
+  const RegisterPage({Key? key, this.title = "Register"}) : super(key: key);
 
   @override
   _RegisterPageState createState() => _RegisterPageState();

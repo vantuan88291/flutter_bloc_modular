@@ -15,44 +15,38 @@ class ThemeModes {
   ThemeModes(this.theme_mode, this.customTheme, this.themeData);
 }
 
-ThemeModes getThemeMode(THEME_MODE themeMode) {
+ThemeModes? getThemeMode(THEME_MODE themeMode) {
   switch (themeMode) {
     case THEME_MODE.LIGHT:
       return ThemeModes(themeMode, CustomTheme.light(), lightThemeData);
-      break;
     case THEME_MODE.DARK:
       return ThemeModes(themeMode, CustomTheme.dark(), darkThemeData);
-      break;
     default:
       return null;
-      break;
   }
 }
 
-CustomTheme getColorTheme(THEME_MODE themeMode) {
+CustomTheme? getColorTheme(THEME_MODE? themeMode) {
   switch (themeMode) {
     case THEME_MODE.LIGHT:
       return CustomTheme.light();
-      break;
     case THEME_MODE.DARK:
       return CustomTheme.dark();
-      break;
     default:
       return null;
-      break;
   }
 }
 
 class DynamicColor<T> extends InheritedWidget {
-  T value;
+  T? value;
 
-  T get customColor => value;
+  T get customColor => value!;
 
   DynamicColor({
-    Key key,
+    Key? key,
     @required this.value,
-    @required Widget child,
-  }) : assert(value != null), assert(child != null), super(key: key, child: child);
+    @required Widget? child,
+  }) : assert(value != null), assert(child != null), super(key: key, child: child!);
 
   @override
   bool updateShouldNotify(InheritedWidget oldWidget) {
@@ -61,6 +55,6 @@ class DynamicColor<T> extends InheritedWidget {
 
   static DynamicColor of<T>(BuildContext context) {
 
-    return context.dependOnInheritedWidgetOfExactType<DynamicColor<T>>();
+    return context.dependOnInheritedWidgetOfExactType<DynamicColor<T>>()!;
   }
 }

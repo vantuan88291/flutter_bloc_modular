@@ -12,42 +12,42 @@ handlerError(error) {
   if (error is DioError) {
     DioError dioError = error as DioError;
     switch (dioError.type) {
-      case DioErrorType.CANCEL:
+      case DioErrorType.cancel:
         return {
           'code': 501,
           'message': "Request to API server was cancelled"
         };
-      case DioErrorType.CONNECT_TIMEOUT:
+      case DioErrorType.connectTimeout:
         return {'code': 502, 'message': "Connection timeout with API server"};
-      case DioErrorType.DEFAULT:
+      case DioErrorType.other:
         return {
           'code': 503,
           'message':
           "Connection to API server failed due to internet connection"
         };
-      case DioErrorType.RECEIVE_TIMEOUT:
+      case DioErrorType.receiveTimeout:
         return {
           'code': 504,
           'message': "Receive timeout in connection with API server"
         };
-      case DioErrorType.RESPONSE:
-        switch(dioError.response.statusCode) {
+      case DioErrorType.response:
+        switch(dioError.response?.statusCode) {
           case 404:
             return {
-              'code': dioError.response.statusCode,
-              'message': dioError.response.statusMessage
+              'code': dioError.response?.statusCode,
+              'message': dioError.response?.statusMessage
             };
           case 401:
-            final msg = dioError.response.data['message'] ?? "";
+            final msg = dioError.response?.data['message'] ?? "";
             if (msg.contains('token')) {
               doExpires();
             }
-            return dioError.response.data;
+            return dioError.response?.data;
           default:
-            return dioError.response.data;
+            return dioError.response?.data;
         }
         break;
-      case DioErrorType.SEND_TIMEOUT:
+      case DioErrorType.sendTimeout:
         return {
           'code': 505,
           'message': "Send timeout in connection with API server"

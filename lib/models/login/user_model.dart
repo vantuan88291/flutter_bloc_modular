@@ -1,23 +1,23 @@
 class UserModel {
-  int minBalance;
-  String avatar;
-  int userId;
-  String email;
-  String phone;
-  String fullName;
-  String aboutMe;
-  int currentBalance;
-  int statusDiscount;
-  String appLogo;
-  String appName;
-  String appDescription;
-  String accountHolder;
-  String accountNumber;
-  String bankName;
-  String branch;
-  String token;
-  int minRevenue;
-  int revenue;
+  late int minBalance;
+  late String avatar;
+  late int userId;
+  late String email;
+  late String phone;
+  late String fullName;
+  late String aboutMe;
+  late int currentBalance;
+  late int statusDiscount;
+  late String appLogo;
+  late String appName;
+  late String appDescription;
+  late String accountHolder;
+  late String accountNumber;
+  late String bankName;
+  late String branch;
+  late String token;
+  late int minRevenue;
+  late int revenue;
 
   UserModel(
       this.minBalance,

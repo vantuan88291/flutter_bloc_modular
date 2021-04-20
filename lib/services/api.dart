@@ -5,7 +5,7 @@ import 'LoggingInterceptor.dart';
 import 'api_problem.dart';
 
 class Api {
-  Dio _dio;
+  late Dio _dio;
   static final Api _instance = Api._internal();
 
   factory Api() => _instance;

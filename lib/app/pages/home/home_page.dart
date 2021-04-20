@@ -4,7 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
-  const HomePage({Key key, this.title = "Home"}) : super(key: key);
+  const HomePage({Key? key, this.title = "Home"}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();

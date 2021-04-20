@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ProductPage extends StatefulWidget {
   final String title;
-  const ProductPage({Key key, this.title = "Product"}) : super(key: key);
+  const ProductPage({Key? key, this.title = "Product"}) : super(key: key);
 
   @override
   _ProductPageState createState() => _ProductPageState();
