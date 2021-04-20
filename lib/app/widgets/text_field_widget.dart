@@ -2,19 +2,19 @@ import 'package:ecommerce/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 typedef onChangeText = void Function(String);
-typedef onValidateText = void Function(String);
+typedef onValidateText = String? Function(String?)?;
 
 class TextFieldWidget extends StatelessWidget {
-  TextFieldWidget({Key key, this.hint, this.onChange, this.keyBoard, this.password, this.autovalidate, this.onValidate, this.style, this.value, this.inputBorder}) : super(key: key);
-  final String hint;
-  final onChangeText onChange;
-  final onValidateText onValidate;
-  final TextInputType keyBoard;
-  final bool password;
-  final bool autovalidate;
-  final TextStyle style;
-  final String value;
-  final InputBorder inputBorder;
+  TextFieldWidget({Key? key, this.hint, this.onChange, this.keyBoard, this.password, this.autovalidate, this.onValidate, this.style, this.value, this.inputBorder}) : super(key: key);
+  final String? hint;
+  final onChangeText? onChange;
+  final onValidateText? onValidate;
+  final TextInputType? keyBoard;
+  final bool? password;
+  final bool? autovalidate;
+  final TextStyle? style;
+  final String? value;
+  final InputBorder? inputBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +28,9 @@ class TextFieldWidget extends StatelessWidget {
       ),
       onChanged: this.onChange,
       keyboardType: this.keyBoard,
-      autovalidate: autovalidate != null ? autovalidate : false,
-      obscureText: this.password == null ? false : this.password,
-      validator: onValidate,
+      autovalidate: autovalidate != null ? autovalidate! : false,
+      obscureText: this.password == null ? false : this.password!,
+      validator: this.onValidate,
     );
   }
 }

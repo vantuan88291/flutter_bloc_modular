@@ -6,7 +6,7 @@ class CustomTheme {
   Color colorStatus1;
   Color colorStatus2;
 
-  CustomTheme({this.colorStatus1, this.colorStatus2});
+  CustomTheme({required this.colorStatus1, required this.colorStatus2});
 
   factory CustomTheme.dark() {
     return CustomTheme(colorStatus1: Colors.red, colorStatus2: Colors.blue);
@@ -33,7 +33,7 @@ class CustomTheme {
 
 final ThemeData lightThemeData = ThemeData.light().copyWith(
   brightness: Brightness.light,
-  primaryColor: Colors.red,
+  primaryColor: Colors.blue,
   primaryColorDark: Colors.red,
   backgroundColor: Colors.white,
   accentColor: Colors.redAccent,
@@ -48,7 +48,7 @@ final ThemeData lightThemeData = ThemeData.light().copyWith(
 
 final ThemeData darkThemeData = ThemeData.dark().copyWith(
     brightness: Brightness.light,
-    primaryColor: Colors.redAccent,
+    primaryColor: Colors.blue,
     primaryColorDark: Colors.red,
     backgroundColor: Colors.red,
     accentColor: Colors.red,

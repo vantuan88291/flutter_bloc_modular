@@ -5,19 +5,17 @@ import 'package:ecommerce/app/pages/register/register_bloc.dart';
 import 'package:ecommerce/app/pages/register/register_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-class AuthenModule extends ChildModule {
+class AuthenModule extends Module {
   @override
   List<Bind> get binds => [
-    Bind((i) => LoginBloc(i()), lazy: true, singleton: false),
-    Bind((i) => RegisterBloc(), lazy: true, singleton: false),
+    Bind((i) => LoginBloc(i()), isLazy: true, isSingleton: false),
+    Bind((i) => RegisterBloc(), isLazy: true, isSingleton: false),
   ];
 
   @override
-  List<ModularRouter> get routers => [
-    ModularRouter(Modular.initialRoute, child: (_, args) => LoadingPage()),
-    ModularRouter('/login', child: (_, args) => LoginPage()),
-    ModularRouter('/register', child: (_, args) => RegisterPage()),
+  List<ModularRoute> get routes => [
+    ChildRoute(Modular.initialRoute, child: (_, args) => LoadingPage()),
+    ChildRoute('/login', child: (_, args) => LoginPage()),
+    ChildRoute('/register', child: (_, args) => RegisterPage()),
   ];
-
-  static Inject get to => Inject<AuthenModule>.of();
 }

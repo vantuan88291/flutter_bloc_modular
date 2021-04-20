@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class InfoCartPage extends StatefulWidget {
   final String title;
-  const InfoCartPage({Key key, this.title = "InfoCart"}) : super(key: key);
+  const InfoCartPage({Key? key, this.title = "InfoCart"}) : super(key: key);
 
   @override
   _InfoCartPageState createState() => _InfoCartPageState();

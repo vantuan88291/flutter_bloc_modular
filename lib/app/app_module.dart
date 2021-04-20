@@ -1,27 +1,20 @@
 import 'package:ecommerce/services/api.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter/material.dart';
-import 'package:ecommerce/app/app_widget.dart';
 
 import 'app_bloc.dart';
 import 'modules/authen/authen_module.dart';
 import 'modules/primary/primary_module.dart';
 
-class AppModule extends MainModule {
+class AppModule extends Module {
   @override
   List<Bind> get binds => [
-        Bind((_) => AppBloc(), lazy: true),
+        Bind.lazySingleton((i) => AppBloc()),
         Bind((i) => Api()),
       ];
 
   @override
-  List<ModularRouter> get routers => [
-        ModularRouter(Modular.initialRoute, module: AuthenModule()),
-        ModularRouter('/primary', module: PrimaryModule()),
+  List<ModularRoute> get routes => [
+    ModuleRoute(Modular.initialRoute, module: AuthenModule()),
+    ModuleRoute('/primary', module: PrimaryModule()),
       ];
-
-  @override
-  Widget get bootstrap => AppWidget();
-
-  static Inject get to => Inject<AppModule>.of();
 }

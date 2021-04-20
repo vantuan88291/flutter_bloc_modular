@@ -9,8 +9,6 @@ class CartModuleModule extends WidgetModule {
   @override
   List<Bind> get binds => [];
 
-  static Inject get to => Inject<CartModuleModule>.of();
-
   @override
   // TODO: implement view
   Widget get view => Navigator(
@@ -18,14 +16,12 @@ class CartModuleModule extends WidgetModule {
     initialRoute: '/',
     onGenerateRoute: generateRoute,
   );
-  Route<dynamic> generateRoute(RouteSettings settings) {
+  Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => CartPage());
-        break;
       case '/infoCart':
         return MaterialPageRoute(builder: (_) => InfoCartPage());
-        break;
     }
   }
 }

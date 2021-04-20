@@ -5,14 +5,14 @@ import 'LoggingInterceptor.dart';
 import 'api_problem.dart';
 
 class Api {
-  Dio _dio;
+  late Dio _dio;
   static final Api _instance = Api._internal();
 
   factory Api() => _instance;
 
   Api._internal() {
     _dio = Dio();
-    _dio.options.baseUrl = BASE_API;
+    _dio.options.baseUrl = Common.BASE_API;
     _dio.options.headers['Accept'] = 'application/json';
     _dio.options.connectTimeout = 20000;
     _dio.interceptors.add(LoggingInterceptor());

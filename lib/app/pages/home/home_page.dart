@@ -1,10 +1,9 @@
 import 'package:ecommerce/app/modules/cart_module/cart_module_module.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
-  const HomePage({Key key, this.title = "Home"}) : super(key: key);
+  const HomePage({Key? key, this.title = "Home"}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();

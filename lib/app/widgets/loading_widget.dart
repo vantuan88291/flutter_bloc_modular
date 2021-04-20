@@ -1,18 +1,18 @@
 import 'package:ecommerce/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../app_bloc.dart';
-import '../app_module.dart';
 
 class LoadingWidget extends StatefulWidget {
   @override
   StateLoadingWidget createState() => StateLoadingWidget();
 }
 class StateLoadingWidget extends State<LoadingWidget> {
-  AppBloc app;
+  AppBloc? app;
   @override
   void initState() {
-    app = AppModule.to.get<AppBloc>();
+    app = Modular.get<AppBloc>();
     super.initState();
   }
   Widget renderLoading() => Scaffold(
@@ -27,9 +27,9 @@ class StateLoadingWidget extends State<LoadingWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<bool>(
-      stream: app.getLoad,
+      stream: app?.getLoad,
       builder: (context, value) {
-        return value.data != null && value.data ? renderLoading() : Container();
+        return value.data != null && value.data! ? renderLoading() : Container();
       },
     );
   }
