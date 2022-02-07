@@ -9,6 +9,10 @@ A new Flutter project. Created by Slidy
 
 ## Getting Started
 
+# install plugin Flutter Inlt to android studio and then:
+
+- Tools -> Flutter Inlt -> Init
+
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
