@@ -28,7 +28,6 @@ class TextFieldWidget extends StatelessWidget {
       ),
       onChanged: this.onChange,
       keyboardType: this.keyBoard,
-      autovalidate: autovalidate != null ? autovalidate! : false,
       obscureText: this.password == null ? false : this.password!,
       validator: this.onValidate,
     );
