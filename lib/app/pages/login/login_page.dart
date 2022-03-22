@@ -23,6 +23,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      backgroundColor: Colors.white,
       body: Column(
         children: <Widget>[
           TextWidget("Login"),

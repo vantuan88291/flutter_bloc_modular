@@ -27,7 +27,7 @@ dependencies:
   intl: ^0.17.0
   loadmore: ^1.0.4
   flutter_modular: ^4.0.0+4
-  flutter_dropdown_alert: ^1.0.3
+  flutter_dropdown_alert: ^1.0.4
   flutter_localizations:
     sdk: flutter
   flutter:
