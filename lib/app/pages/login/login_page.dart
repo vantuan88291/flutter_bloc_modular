@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base_project/app/widgets/button_widget.dart';
-import 'package:flutter_base_project/app/widgets/text_widget.dart';
+import 'package:flutter_base_project/app/prototypes/button_widget.dart';
 import 'package:flutter_base_project/generated/l10n.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
+import '../../prototypes/text_widget.dart';
 import 'login_bloc.dart';
 
 class LoginPage extends StatefulWidget {

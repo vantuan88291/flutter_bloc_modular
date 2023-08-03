@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base_project/app/widgets/button_widget.dart';
-import 'package:flutter_base_project/app/widgets/text_widget.dart';
+import 'package:flutter_base_project/app/prototypes/button_widget.dart';
+import '../../prototypes/text_widget.dart';
 
 class CartPage extends StatefulWidget {
   final String title;

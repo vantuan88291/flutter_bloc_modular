@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base_project/app/widgets/text_widget.dart';
+import '../../prototypes/text_widget.dart';
 
 class InfoCartPage extends StatefulWidget {
   final String title;
