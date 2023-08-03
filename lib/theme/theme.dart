@@ -35,11 +35,17 @@ final ThemeData lightThemeData = ThemeData.light().copyWith(
   brightness: Brightness.light,
   primaryColor: Colors.blue,
   primaryColorDark: Colors.red,
-  backgroundColor: Colors.white,
-  accentColor: Colors.redAccent,
-  bottomAppBarColor: Colors.white,
+  colorScheme: ColorScheme.dark(background: Colors.white, secondary: Colors.redAccent),
+  bottomAppBarTheme: BottomAppBarTheme(
+      color: Colors.white
+  ),
+  appBarTheme: AppBarTheme(
+    backgroundColor: Colors.blue,
+      titleTextStyle: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+      iconTheme: IconThemeData(color: Colors.white)
+  ),
   textTheme: TextTheme(
-    subtitle1: TextStyle(
+    titleMedium: TextStyle(
       color: Colors.red,
       fontFamily: 'abc'
     ),
@@ -50,11 +56,17 @@ final ThemeData darkThemeData = ThemeData.dark().copyWith(
     brightness: Brightness.light,
     primaryColor: Colors.blue,
     primaryColorDark: Colors.red,
-    backgroundColor: Colors.red,
-    accentColor: Colors.red,
-    bottomAppBarColor: Colors.white,
+    colorScheme: ColorScheme.dark(background: Colors.red, secondary: Colors.redAccent),
+    bottomAppBarTheme: BottomAppBarTheme(
+      color: Colors.white
+    ),
+    appBarTheme: AppBarTheme(
+        backgroundColor: Colors.blue,
+        titleTextStyle: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+        iconTheme: IconThemeData(color: Colors.white)
+    ),
     textTheme: TextTheme(
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
             color: Colors.red,
             fontFamily: 'abc'
         )

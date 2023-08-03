@@ -23,11 +23,11 @@ class _HomePageState extends State<HomePage> {
             ],
           )),
       bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Theme.of(context).accentColor,
+          selectedItemColor: Theme.of(context).colorScheme.secondary,
           unselectedItemColor: Colors.grey,
           type: BottomNavigationBarType.fixed,
           elevation: 25,
-          backgroundColor: Theme.of(context).bottomAppBarColor,
+          backgroundColor: Theme.of(context).bottomAppBarTheme.color,
           currentIndex: 0,
           items: [
             BottomNavigationBarItem(

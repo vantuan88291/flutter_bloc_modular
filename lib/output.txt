@@ -1,0 +1,58 @@
+/lib
+├── app
+|  ├── app_controller.dart
+|  ├── app_module.dart
+|  ├── app_widget.dart
+|  ├── modules
+|  |  ├── authen
+|  |  |  └── authen_module.dart
+|  |  └── primary
+|  |     └── primary_module.dart
+|  ├── pages
+|  |  ├── home
+|  |  |  ├── home_bloc.dart
+|  |  |  └── home_page.dart
+|  |  ├── loading
+|  |  |  ├── loading_bloc.dart
+|  |  |  └── loading_page.dart
+|  |  ├── login
+|  |  |  ├── login_bloc.dart
+|  |  |  └── login_page.dart
+|  |  └── register
+|  |     └── register_page.dart
+|  ├── prototypes
+|  |  ├── button_widget.dart
+|  |  ├── text_field_widget.dart
+|  |  └── text_widget.dart
+|  └── widgets
+|     └── loading_widget.dart
+├── generated
+|  ├── intl
+|  |  ├── messages_all.dart
+|  |  └── messages_en.dart
+|  └── l10n.dart
+├── l10n
+|  └── intl_en.arb
+├── main.dart
+├── models
+|  ├── login
+|  |  ├── login_params.dart
+|  |  ├── results_login.dart
+|  |  └── user_model.dart
+|  ├── model.dart
+|  └── theme
+|     └── theme_data.dart
+├── services
+|  ├── LoggingInterceptor.dart
+|  ├── api.dart
+|  └── api_problem.dart
+├── theme
+|  ├── colors.dart
+|  ├── images.dart
+|  └── theme.dart
+└── tool
+   ├── common.dart
+   └── utils.dart
+
+directory: 23 file: 40
+
